@@ -1,0 +1,24 @@
+/* color refers to the text color, not the background */
+
+body {
+    background-color:azure;
+}
+
+p {
+    color:#005b89;
+    border: 5px double #c3ffff;
+    padding: 50px;
+    text-align: center;
+}
+
+.special {
+    background-color: yellowgreen;
+}
+
+.highlight {
+    color: pink;
+}
+
+img {
+    width: 100%;
+}
