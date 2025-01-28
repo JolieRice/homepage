@@ -1,3 +1,11 @@
 .background{
     background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: center; background-size: cover; overflow: hidden;
 }
+h1{
+    border: 5px double #fff3f5;
+    padding: 50px;
+    text-align: center;
+}
+.pinky{
+    background-color: #fff3f5;
+}
