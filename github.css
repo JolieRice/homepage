@@ -45,22 +45,3 @@ p:hover span{
     display:block;
 }
 
-
-div.appear {
-    width: 250px; 
-    border: #000 2px solid;
-    background:#F8F8F8;
-    position: relative;
-    top: 5px;
-    left:15px;
-    display:none;
-    padding: 0 20px 20px 20px;
-    z-index: 1000000;
-}
-div.hover  {
-    cursor:pointer;
-    width: 5px;
-}
-div.hover:hover div.appear {
-    display:block;
-}
