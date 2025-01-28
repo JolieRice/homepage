@@ -3,7 +3,7 @@
 }
 
 h1{
-    color:#005b89;
+    color:#ffffff;
     border: 5px double #c3ffff;
     padding: 50px;
     display: block;
@@ -12,6 +12,7 @@ h1{
     text-align: center;
 }
 .textback{
+    color: #ffffff;
     border: 4px solid #000000;
     padding: 0 50px !important;
     display: block;
