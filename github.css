@@ -1,3 +1,10 @@
 .background{
     background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: center; background-size: cover; overflow: hidden;
 }
+.textback{
+    border: 4px solid #000000;
+    padding: 0 50px !important;
+    display: block;
+    margin-bottom: 50px;
+    background: #000000;
+}
