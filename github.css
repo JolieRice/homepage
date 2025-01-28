@@ -1,3 +1,11 @@
 .background{
     background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: center; background-size: cover; overflow: hidden;
 }
+
+.hide{
+    display: none;
+}
+
+.myDIV:hover + .hide{
+    display: block; color: pink;
+}
