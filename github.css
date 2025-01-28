@@ -6,7 +6,7 @@
 }
 
 .gifback{
-    min-height: 100vh; width: 100%; background-color: #ffe9f5; background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: center; background-repeat: no-repeat; background-size: 100%; color: #fff; padding:0 8%;
+    min-height: 100vh; width: 100%; background-color: #ffe9f5; background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: fill; background-repeat: no-repeat; background-size: 100%; color: #fff; padding:0 8%;
 }
 
 nav{
