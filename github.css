@@ -1,0 +1,22 @@
+body {
+    background-color:azure;
+}
+
+p {
+    color:#68002b;
+    border: 5px double #c3ffff;
+    padding: 50px;
+    text-align: center;
+}
+
+.special {
+    background-color: yellowgreen;
+}
+
+.highlight {
+    color: pink;
+}
+
+img {
+    width: 100%;
+}
