@@ -1,0 +1,13 @@
+body{
+    background-color: pink;
+}
+img{
+    max-width: 100%;
+}
+div {
+    margin: 20px;
+    background: lightpink;
+    padding: 10px;
+    text-align: center;
+
+}
