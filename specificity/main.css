@@ -32,3 +32,16 @@ main{
 #id{
     background: lightgreen;
 }
+
+footer {
+    margin: 20px;
+    background: #b5d0ff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* styles declared lower in the css document are more specific */
+
+footer{
+    background: yellow;
+}
