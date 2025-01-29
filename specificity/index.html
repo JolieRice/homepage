@@ -4,6 +4,7 @@
         <title>specificity</title>
         <link rel="stylesheet" href="main.css">
         <style>
+            /*embedded styles are more specific than external styles, but less specific than inline styles */
             div {
                 background: lightblue;
             }
@@ -11,7 +12,8 @@
     </head>
 
     <body>
-        <div>Application Specificity</div>
+        <!--inline styles are the most specific application-->
+        <div style="background: lightcyan;">Application Specificity</div>
     </body>
 
    </html>
