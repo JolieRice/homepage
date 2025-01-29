@@ -23,6 +23,12 @@ main{
     text-align: center;
 }
 
+/* classes are more specific than default tags, but less specific than ids */
+
 .class{
     background: lightsalmon;
+}
+
+#id{
+    background: lightgreen;
 }
