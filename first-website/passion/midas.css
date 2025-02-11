@@ -88,3 +88,14 @@ h1{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  div.scroll-container {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+  }
