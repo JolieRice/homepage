@@ -88,3 +88,8 @@ h1{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+p{
+    padding: 50px;
+    text-align: center;
+}
