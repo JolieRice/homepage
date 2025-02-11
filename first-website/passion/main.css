@@ -16,7 +16,7 @@ h1{
 .container {
     background: #0c4b6b;
     border: 1px;
-    margin: 10px;
+    padding: 5px;
 }
 
 /* Navbar container */
