@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #fffcc0;
+}
+img{
+    max-width: 100%;
+}
+
 .fixed{
     background: #e2aa81;
     border: 1px solid;
