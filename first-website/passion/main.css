@@ -9,15 +9,6 @@ img{
     max-width: 100%;
 }
 
-.fixed{
-    background: #e2aa81;
-    border: 1px solid;
-    padding: 20px;
-    position: fixed;
-    top:0;
-    left: 0;
-}
-
 
 /* Navbar container */
 .navbar {
