@@ -35,6 +35,7 @@
   .fakeimg {
     background-color: #ffffff;
     width: 100%;
+    height: 500px;
     padding: 20px;
   }
   
@@ -43,6 +44,8 @@
      background-color: #fcf9d0;
      padding: 20px;
      margin-top: 20px;
+     width: 900px;
+     height: 800px;
   }
   
   /* Clear floats after the columns */
