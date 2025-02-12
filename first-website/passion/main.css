@@ -89,11 +89,13 @@ h1{
     display: block;
   }
 
-p{
+h2{
     text-align: center;
+    font-size: 30px;
     padding: 80px;
     top: 50px;
     font-size: 16px;
     font-family: Arial;
     background-color: #fcf9d0;
 }
+
