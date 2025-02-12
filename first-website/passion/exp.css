@@ -31,31 +31,25 @@
     padding-left: 20px;
   }
   
-  /* Fake image */
   .fakeimg {
     background-color: #ffffff;
     width: 100%;
-    height: 500px;
     padding: 20px;
   }
   
-  /* Add a card effect for articles */
   .card {
      background-color: #fcf9d0;
      padding: 20px;
      margin-top: 20px;
      width: 900px;
-     height: 800px;
   }
   
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  /* Footer */
   .footer {
     padding: 20px;
     text-align: center;
