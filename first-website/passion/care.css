@@ -128,7 +128,7 @@ h1{
   
   /* Fake image */
   .fakeimg {
-    background-color: #000000;
+    background-color: #fcf9d0;
     width: 100%;
     padding: 20px;
   }
@@ -163,3 +163,4 @@ h1{
     }
   }
 
+  
