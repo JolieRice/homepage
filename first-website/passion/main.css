@@ -89,13 +89,26 @@ h1{
     display: block;
   }
 
-p{
+  p {
     text-align: center;
     font-size: 20px;
-    padding: 80px;
-    top: 50px;
-    font-size: 25px;
-    font-family: Arial;
+    padding: 40px;
     background-color: #ffffff;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.media-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.media-container img, .media-container video {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    height: auto;
+}
