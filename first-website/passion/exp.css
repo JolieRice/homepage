@@ -2,65 +2,62 @@
     box-sizing: border-box;
   }
   
-  /* Add a gray background color with some padding */
   body {
-    font-family: Arial;
+    background-color: #f1f1f1;
     padding: 20px;
-    background: #fffeee;
+    font-family: Arial;
   }
   
-  /* Header/Blog Title */
-  .header {
-    padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    background: white;
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
   }
   
-  /* Create two unequal columns that floats next to each other */
-  /* Left column */
-  .leftcolumn {   
-    float: left;
-    width: 75%;
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
   }
   
-  /* Right column */
-  .rightcolumn {
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
     float: left;
     width: 25%;
-    padding-left: 20px;
   }
   
-  .fakeimg {
-    background-color: #ffffff;
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .card {
-     background-color: #fcf9d0;
-     padding: 20px;
-     margin-top: 20px;
-     width: 900px;
-  }
-  
+  /* Clear floats after rows */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
   }
   
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
       width: 100%;
-      padding: 0;
     }
   }
