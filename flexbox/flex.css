@@ -1,0 +1,23 @@
+body{
+    background-color: pink;
+}
+img{
+    max-width: 100%;
+}
+
+.container {
+background: lightblue;
+padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
+}
+
+.item {
+    background: bisque;
+    padding: 10px;
+    border: 1px solid;
+    width: 200px;
+}
