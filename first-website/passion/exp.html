@@ -1,101 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta
-      name="viewport"
-      content="user-scalable=no, initial-scale=1,
-                   maximum-scale=1, minimum-scale=1, 
-                   width=device-width"
-    />
-    <!-- CSS file linked -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Creation</title>
     <link rel="stylesheet" href="exp.css" />
-    <title>Blog Website</title>
   </head>
-
   <body>
-    <header>
-      <h1 class="logo"><a href="#">Soundscape Library</a></h1>
-      <nav>
-        <ul>
-          <li class="nav1">
-            <a href="#" id="createPostBtn"> Create Post </a>
-          </li>
-          <li class="nav1"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <h1>Create a New Post</h1>
+    <button id="createPostBtn">Create Post</button>
 
-    <main class="post-container">
-      <div id="createPostModal" class="modal">
-        <div class="modal-content">
-          <span class="close" id="closeModal">&times;</span>
-          <h2>Create a New Post</h2>
-          <form id="postForm">
-            <div class="upper">
-              <div class="title">
-                <label class="postheading" for="postTitle"> Sound Title </label>
-                <input
-                  type="text"
-                  class="postTitle"
-                  id="postTitle"
-                  name="postTitle"
-                  autocomplete="off"
-                  required
-                />
-              </div>
-              <div class="category1">
-                <label class="postheading" for="postCategory">
-                  Artist (you)
-                </label>
-                <input
-                  type="text"
-                  class="postCategory"
-                  id="postCategory"
-                  name="postCategory"
-                  autocomplete="off"
-                  required
-                />
-              </div>
-            </div>
+    <!-- Create Post Modal -->
+    <div id="createPostModal">
+      <form id="postForm">
+        <input type="text" class="title" placeholder="Title" required />
+        <textarea
+          class="postDescription"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input type="text" class="category1" placeholder="Category" required />
+        <input type="file" id="postImage" />
+        <input type="file" id="postAudio" />
+        <button type="submit" id="postSubmitBtn">Create Post</button>
+        <button type="button" id="closeModal">Close</button>
+      </form>
+    </div>
 
-            <label class="postheading" for="postDescription">
-              Description
-            </label>
-            <textarea
-              class="postDescription"
-              id="postDescription"
-              name="postDescription"
-              autocomplete="off"
-              required
-            >
-            </textarea>
+    <div class="post-container"></div>
 
-            <input type="file" id="postImage" accept="image/*" />
-            <input type="file" id="postAudio" accept="audio/*" />
-
-            <button type="submit" id="postSubmitBtn" class="postSubmitBtn">
-              Post
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Detail Modal -->
-      <div id="postDetailModal" class="modal">
-        <div class="modal-content">
-          <span class="close" id="closeDetailModal"> &times; </span>
-          <h1 id="detailTitle"></h1>
-          <span id="detailDate"></span>
-          <p id="detailDescription"></p>
-        </div>
-      </div>
-
-      <div id="postCreatedMessage" class="post-message">
-        Post created successfully!
-      </div>
-    </main>
-
-    <!-- JavaScript file linked -->
     <script src="exp.js"></script>
   </body>
 </html>

@@ -1,169 +1,124 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const createPostBtn = document.getElementById("createPostBtn");
   const createPostModal = document.getElementById("createPostModal");
-  const closeModal = document.getElementById("closeModal");
   const postForm = document.getElementById("postForm");
   const postSubmitBtn = document.getElementById("postSubmitBtn");
   const postContainer = document.querySelector(".post-container");
-  const postDetailModal = document.getElementById("postDetailModal");
-  const closeDetailModal = document.getElementById("closeDetailModal");
-  const detailTitle = document.getElementById("detailTitle");
-  const detailDate = document.getElementById("detailDate");
-  const detailDescription = document.getElementById("detailDescription");
+  const closeModal = document.getElementById("closeModal");
 
-  createPostBtn.addEventListener("click", function () {
-    createPostModal.style.display = "flex";
-  });
+  // Show modal when "Create Post" button is clicked
+  document
+    .getElementById("createPostBtn")
+    .addEventListener("click", function () {
+      createPostModal.style.display = "flex";
+    });
 
+  // Close modal
   closeModal.addEventListener("click", function () {
-    // Add fadeOut class
-    createPostModal.classList.add("fadeOut");
-    setTimeout(() => {
-      createPostModal.style.display = "none";
-      // Remove fadeOut class
-      createPostModal.classList.remove("fadeOut");
-    }, 500);
+    createPostModal.style.display = "none";
   });
 
+  // Handle form submission
   postForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    const title = document.querySelector(".title").value;
+    const category = document.querySelector(".category1").value;
+    const description = document.querySelector(".postDescription").value;
 
-    //get input values
-    const postCategory = document.getElementById("postCategory").value;
-    const postTitle = document.getElementById("postTitle").value;
-    const postDescription = document.getElementById("postDescription").value;
-    const postImage = document.getElementById("postImage").files[0]; // Image file
-    const postAudio = document.getElementById("postAudio").files[0]; // Audio file
+    // Get image and audio files
+    const postImage = document.getElementById("postImage").files[0];
+    const postAudio = document.getElementById("postAudio").files[0];
 
-    // Validation
-    if (
-      postCategory.trim() === "" ||
-      postTitle.trim() === "" ||
-      postDescription.trim() === ""
-    ) {
-      alert("Please fill out all fields.");
-      return;
-    }
-
-    if (
-      postCategory.trim() === "" ||
-      postTitle.trim() === "" ||
-      postDescription.trim() === ""
-    ) {
-      alert("Please fill out all fields.");
-      return;
-    }
-
-    // Format the current date
+    // Get current date
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()} ${currentDate.toLocaleString(
       "default",
       { month: "short" }
     )} ${currentDate.getFullYear()}`;
 
-    // Convert files to URLs
+    // Create file URLs if files are uploaded
     const imageUrl = postImage ? URL.createObjectURL(postImage) : null;
     const audioUrl = postAudio ? URL.createObjectURL(postAudio) : null;
 
-    // Create a new post element
-    const newPost = document.createElement("div");
-    newPost.className = "post-box";
-    newPost.innerHTML = `
-      <h1 class="post-title" data-title="${postTitle}"
-         data-date="${formattedDate}"
-         data-description="${postDescription}">
-        ${postTitle}
-      </h1><br>
-      <h2 class="category">${postCategory}</h2><br>
-      <span class="post-date">${formattedDate}</span>
-      <p class="post-description">${postDescription.substring(0, 100)}...</p>
-      ${
-        imageUrl
-          ? `<img src="${imageUrl}" alt="Post Image" class="post-image">`
-          : ""
-      }
-      ${
-        audioUrl
-          ? `<audio controls><source src="${audioUrl}" type="audio/mpeg"></audio>`
-          : ""
-      }
-      <button class="delete-post" data-title="${postTitle}">Delete</button>
-      <span class="load-more" data-title="${postTitle}" 
-        data-date="${formattedDate}" 
-        data-description="${postDescription}">
-        Load more
-      </span>
-    `;
+    // Prepare post data
+    const postData = {
+      category: category,
+      title: title,
+      description: description,
+      imageUrl: imageUrl,
+      audioUrl: audioUrl,
+      date: formattedDate,
+    };
 
-    // Append the new post to the post container
-    postContainer.insertBefore(newPost, postContainer.firstChild);
-
-    // Show success message
-    const postCreatedMessage = document.getElementById("postCreatedMessage");
-    postCreatedMessage.style.display = "block";
-
-    // Hide message after 3 seconds
-    setTimeout(() => {
-      postCreatedMessage.style.display = "none";
-    }, 3000);
-
-    // Close the modal
-    createPostModal.style.display = "none";
-
-    // Reset the form
-    postForm.reset();
-
-    setTimeout(() => {
-      postCreatedMessage.style.display = "none";
-    }, 3000);
+    // Send post data to backend
+    fetch("http://localhost:3000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        loadPosts(); // Reload posts after successful creation
+      })
+      .catch((error) => {
+        console.error("Error creating post:", error);
+      });
   });
 
+  // Load posts from backend
+  function loadPosts() {
+    fetch("http://localhost:3000/posts")
+      .then((response) => response.json())
+      .then((data) => {
+        postContainer.innerHTML = ""; // Clear existing posts
+
+        data.forEach((post) => {
+          const newPost = document.createElement("div");
+          newPost.className = "post-box";
+          newPost.innerHTML = `
+                <h1 class="post-title">${post.title}</h1>
+                <h2 class="category">${post.category}</h2>
+                <span class="post-date">${post.date}</span>
+                <p class="post-description">${post.description}</p>
+                ${
+                  post.imageUrl
+                    ? `<img src="${post.imageUrl}" alt="Post Image" class="post-image">`
+                    : ""
+                }
+                ${
+                  post.audioUrl
+                    ? `<audio controls><source src="${post.audioUrl}" type="audio/mpeg"></audio>`
+                    : ""
+                }
+                <button class="delete-post" data-id="${post.id}">Delete</button>
+              `;
+          postContainer.appendChild(newPost);
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading posts:", error);
+      });
+  }
+
+  // Handle post deletion
   postContainer.addEventListener("click", function (event) {
-    if (
-      event.target.classList.contains("load-more") ||
-      event.target.classList.contains("post-title")
-    ) {
-      const title = event.target.getAttribute("data-title");
-      const date = event.target.getAttribute("data-date");
-      const description = event.target.getAttribute("data-description");
-
-      // Set content in detail modal
-      detailTitle.textContent = title;
-      detailDate.textContent = date;
-      detailDescription.textContent = description;
-
-      // Display the detail modal
-      postDetailModal.style.display = "flex";
-    }
-
     if (event.target.classList.contains("delete-post")) {
-      const titleToDelete = event.target.getAttribute("data-title");
-      const postToDelete = document
-        .querySelector(
-          `
-              .post-title[data-title=
-                  "${titleToDelete}"]`
-        )
-        .closest(".post-box");
+      const postIdToDelete = event.target.getAttribute("data-id");
 
-      // Add fadeOut class to initiate the animation
-      postToDelete.classList.add("fadeOut");
-
-      // Remove the post after the animation completes
-      setTimeout(() => {
-        postContainer.removeChild(postToDelete);
-      }, 500);
+      fetch(`http://localhost:3000/posts/${postIdToDelete}`, {
+        method: "DELETE",
+      })
+        .then(() => {
+          const postToDelete = event.target.closest(".post-box");
+          postContainer.removeChild(postToDelete);
+        })
+        .catch((error) => {
+          console.error("Error deleting post:", error);
+        });
     }
   });
 
-  closeDetailModal.addEventListener("click", function () {
-    // Add fadeOut class
-    postDetailModal.classList.add("fadeOut");
-    setTimeout(() => {
-      postDetailModal.style.display = "none";
-
-      // Remove fadeOut class
-      postDetailModal.classList.remove("fadeOut");
-    }, 500);
-  });
+  // Load posts when the page loads
+  loadPosts();
 });
