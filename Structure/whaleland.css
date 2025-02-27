@@ -1,0 +1,184 @@
+/* General Page Styling */
+body {
+  background-image: url("whaleback.jpg"); /* Replace 'your-image.jpg' with the path to your image */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image on the page */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes sure the body takes the full height of the viewport */
+  margin: 0; /* Removes the default margin */
+}
+
+/* Ocean & Waves */
+#ocean {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Waves Animation */
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.3);
+  bottom: 0;
+  border-radius: 50%;
+  animation: waveMove 6s infinite linear alternate;
+}
+
+.wave1 {
+  animation-delay: 0s;
+}
+.wave2 {
+  animation-delay: 2s;
+  opacity: 0.7;
+}
+.wave3 {
+  animation-delay: 4s;
+  opacity: 0.5;
+}
+.wave4 {
+  animation-delay: 6s;
+  opacity: 0.3;
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Floating Islands */
+.island {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: transform 3s ease-in-out, 3s ease-in-out;
+  animation: floatIsland 4s infinite ease-in-out alternate;
+}
+
+/* Continuous floating animation */
+@keyframes floatIsland {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.island:hover {
+  transform: scale(1.2) translateY(-20px);
+}
+
+/* Island Positions */
+#island1 {
+  top: 15%;
+  left: 10%;
+}
+#island2 {
+  top: 50%;
+  left: 10%;
+}
+#island3 {
+  top: 65%;
+  left: 34%;
+}
+#island4 {
+  top: 50%;
+  left: 60%;
+}
+
+.island img {
+  width: 100%;
+}
+
+.text-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 252, 232);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-box button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.text-box button:hover {
+  background-color: #eaa700;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  opacity: 90%;
+  animation: moveClouds 12s infinite linear;
+}
+
+.cloud1 {
+  top: 10%;
+  left: 20%;
+  animation-duration: 30s;
+}
+.cloud2 {
+  top: 30%;
+  left: 60%;
+  width: 20%;
+  animation-duration: 35s;
+}
+.cloud3 {
+  top: 50%;
+  left: 80%;
+  animation-duration: 40s;
+}
+.cloud4 {
+  top: 15%;
+  left: 40%;
+  animation-duration: 45s;
+}
+.cloud5 {
+  top: 45%;
+  left: 10%;
+  animation-duration: 50s;
+}
+.cloud6 {
+  top: 70%;
+  left: 75%;
+  animation-duration: 55s;
+}
+
+.cloud img {
+  width: 100%;
+}
+
+/* Cloud Animation */
+@keyframes moveClouds {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
