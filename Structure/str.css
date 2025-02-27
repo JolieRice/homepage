@@ -1,11 +1,60 @@
 /* General Page Styling */
 body {
-  background-image: url("background.jpg"); /* Replace 'your-image.jpg' with the path to your image */
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-position: center; /* Centers the image on the page */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100vh; /* Makes sure the body takes the full height of the viewport */
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Ensures the body takes the full height of the viewport */
   margin: 0; /* Removes the default margin */
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars during animation */
+}
+
+.frontcloud {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  animation: revealScreen 15s ease-out forwards;
+}
+
+.left {
+  left: 0;
+  background: url("cloud.png") no-repeat center center;
+  background-size: 100%;
+}
+
+.right {
+  right: 0;
+  background: url("cloud.png") no-repeat center center;
+  background-size: 100%;
+  /* The right cloud will be in a separate animation */
+  animation: revealScreenRight 15s ease-out forwards;
+}
+
+@keyframes revealScreen {
+  0% {
+    transform: translateX(0); /* Start with clouds covering the screen */
+  }
+  50% {
+    transform: translateX(-100%); /* Left cloud moves left */
+  }
+  100% {
+    transform: translateX(-100%); /* Left cloud finishes off-screen */
+  }
+}
+
+@keyframes revealScreenRight {
+  0% {
+    transform: translateX(0); /* Start with clouds covering the screen */
+  }
+  50% {
+    transform: translateX(100%); /* Right cloud moves right */
+  }
+  100% {
+    transform: translateX(100%); /* Right cloud finishes off-screen */
+  }
 }
 
 /* Ocean & Waves */
@@ -95,7 +144,7 @@ body {
 }
 #island4 {
   top: 25%;
-  left: 80%;
+  left: 60%;
 }
 
 .island img {

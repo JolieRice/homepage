@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const textContent = document.getElementById("island-text");
   const closeButton = document.getElementById("close-text");
 
+  document.getElementById("back-button").addEventListener("click", function () {
+    window.location.href = "str.html"; // Replace "index.html" with your homepage URL
+  });
+
   islands.forEach((island) => {
     island.addEventListener("mouseover", () => {
       island.style.transform = "scale(1.3) translateY(-25px)";

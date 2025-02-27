@@ -8,6 +8,27 @@ body {
   margin: 0; /* Removes the default margin */
 }
 
+#back-button {
+  position: fixed;
+  top: 20px; /* Distance from the top of the page */
+  left: 50%; /* Center horizontally */
+  transform: translateX(
+    -50%
+  ); /* Perfectly center it by adjusting its position */
+  padding: 10px 20px;
+  background-color: #000000; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000; /* Ensures the button stays on top */
+}
+
+#back-button:hover {
+  background-color: #eaa700; /* Darken button on hover */
+}
+
 /* Ocean & Waves */
 #ocean {
   position: relative;
