@@ -1,0 +1,136 @@
+/* styles.css */
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  animation: spin 50s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  animation: moveAround 7s linear infinite;
+}
+
+.circle img {
+  width: 5vw;
+}
+
+@keyframes moveAround {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 100%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.picnic-container {
+  position: relative;
+  width: 50%; /* Keeps it smaller */
+  height: 100%;
+  background-image: url("picnicblue.avif");
+  background-size: cover;
+}
+
+.ants {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+
+.ant {
+  width: 70px;
+  height: 70px;
+  background: url("ant.png") no-repeat center/contain;
+  position: absolute;
+}
+
+.food {
+  width: 50px; /* Adjusted size */
+  height: 50px;
+  background-size: contain; /* Ensures the image fits inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: left 2s linear, top 2s linear;
+  animation: heartbeat 2s infinite;
+}
+.food img {
+  width: 500px;
+  height: auto;
+  max-width: 500px; /* Prevents images from getting too big */
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+#food1 {
+  top: 15%;
+  left: 30%;
+}
+#food2 {
+  top: 50%;
+  left: 35%;
+}
+#food3 {
+  top: 65%;
+  left: 65%;
+}
+#food4 {
+  top: 25%;
+  left: 60%;
+}
