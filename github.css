@@ -1,20 +1,143 @@
-.background{
-    background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif); background-position: center; background-size: cover; overflow: hidden;
+/* Background */
+body {
+  background-image: url(https://i.pinimg.com/originals/19/d7/14/19d71479920640e6cd75fbd9edfe8dec.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+/* Glowing Title */
 .glow {
-    font-size: 80px;
-    color: #fff;
-    text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+  font-size: 100px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff8c96, 0 0 30px #ff8c96;
+  animation: glow 1s ease-in-out infinite alternate;
+  margin-top: 0%;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff8c96, 0 0 30px #ff8c96;
   }
-  
-  @-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff8c96, 0 0 40px #ff8c96, 0 0 50px #ff8c96, 0 0 60px #ff8c96, 0 0 70px #ff8c96;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ffacb3, 0 0 40px #ffacb3, 0 0 50px #ffacb3, 0 0 60px #ffacb3, 0 0 70px #ffacb3, 0 0 80px #ffacb3;
-    }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffacb3, 0 0 40px #ffacb3;
   }
+}
+
+/* Grid Layout for Clickable Items */
+.link-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Tooltip Container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image Styling */
+.tooltip img {
+  width: 170px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Tooltip Text (Centered Over Image) */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show Tooltip on Hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Flexbox Layout for Clickable Items */
+.link-container {
+  display: flex;
+  justify-content: center; /* Centers items in the row */
+  gap: 30px; /* Adds space between items */
+  flex-wrap: wrap; /* Allows wrapping if the screen is small */
+  padding: 20px;
+}
+
+/* Centering Each Dropdown Item */
+.dropdown {
+  position: relative;
+  text-align: center;
+}
+
+/* Image Styling */
+.dropdown img {
+  width: 170px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.dropdown img:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  display: block;
+  color: black;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff8c96;
+  color: white;
+}
+
+/* Show Dropdown When Active */
+.dropdown.show .dropdown-content {
+  display: block;
+}

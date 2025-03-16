@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Jolie's Webpage</title>
-    <link rel="stylesheet" href="github.css">
+    <link rel="stylesheet" href="github.css" />
     <style>
-        body {
-            background-image: url(https://i.pinimg.com/originals/51/e9/ec/51e9ecb42b50af5d9bbc1ea8a232e993.gif); background-size:cover; background-repeat: no-repeat; background-position: center; height: 100vh;
-        }
-
-        
+      body {
+        background-image: url(https://i.pinimg.com/originals/51/e9/ec/51e9ecb42b50af5d9bbc1ea8a232e993.gif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+      }
     </style>
-</head>
-<body>
-    <h1 class="glow" style="font-family: Georgia, 'Times New Roman', Times, serif;">Jolie's Homepage</h1>
-    <h3 style="text-align: center; color: #ffffff;">Jolie's homepage for handmade web design class.</h3>
-</body>
+  </head>
+  <body>
+    <h1 class="glow">Jolie's Homepage</h1>
+    <h3>Jolie's homepage for handmade web design class.</h3>
 
-<style>
-    /* Tooltip container */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      /* If you want dots under the hoverable text */
-    }
-    
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      top: -5px;
-      left: 105%;
-      margin-left: -60px;
-      background-color: #ffffff;
-      color: #000000;
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-     
-      /* Position the tooltip text - see examples below! */
-      position: absolute;
-      z-index: 1;
-    }
-    
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
-    </style>
+    <div class="link-container">
+      <div class="dropdown">
+        <div class="tooltip" onclick="toggleDropdown('dropdown1')">
+          <img src="bee.png" width="200" />
+          <span class="tooltiptext">First Website</span>
+        </div>
+        <div class="dropdown-content" id="dropdown1">
+          <a href="first-website/index.html">Visit Website</a>
+          <a href="#">More Info</a>
+        </div>
+      </div>
 
-    <!--putting text align center did not work-->
- <p style="text-align: center;">
-    <div class="tooltip"><a href="first-website/index.html">
-        <img src="bee.png" width="200">
-    </a>
-      <span class="tooltiptext">First Website</span>
+      <div class="dropdown">
+        <div class="tooltip" onclick="toggleDropdown('dropdown2')">
+          <img src="red flower.png" width="150" />
+          <span class="tooltiptext">Passion Project</span>
+        </div>
+        <div class="dropdown-content" id="dropdown2">
+          <a href="first-website/passion/about.html">About Passion Project</a>
+          <a href="#">More Details</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="tooltip" onclick="toggleDropdown('dropdown3')">
+          <img src="cake.webp" width="170" />
+          <span class="tooltiptext">ScreenSaver</span>
+        </div>
+        <div class="dropdown-content" id="dropdown3">
+          <a href="Screensaver/ss.html">View Screensaver</a>
+          <a href="#">More Details</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="tooltip" onclick="toggleDropdown('dropdown4')">
+          <img src="cat.webp" width="170" />
+          <span class="tooltiptext">Structure</span>
+        </div>
+        <div class="dropdown-content" id="dropdown4">
+          <a href="Structure/str.html">View Structure</a>
+          <a href="#">More Details</a>
+        </div>
+      </div>
     </div>
-</p>
 
-<P style="text-align: center;">
-    <div class="tooltip"><a href="first-website/passion/about.html">
-        <img src="red flower.png" width="150">
-    </a>
-      <span class="tooltiptext">Passion Project</span>
-    </div>
-</p>
-
-<p style="text-align: center;">
-    <div class="tooltip"><a href="Screensaver/ss.html">
-        <img src="cake.webp" width="170">
-    </a>
-      <span class="tooltiptext">ScreenSaver</span>
-    </div>
-</p>
-
-<p style="text-align: center;">
-  <div class="tooltip"><a href="Structure/str.html">
-      <img src="cat.webp" width="170">
-  </a>
-    <span class="tooltiptext">Structure</span>
-  </div>
-</p>
-</html> 
+    <script src="github.js"></script>
+  </body>
+</html>
