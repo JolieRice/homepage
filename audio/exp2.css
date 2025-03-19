@@ -1,0 +1,175 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-left: 5%;
+  font-size: 35px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffffbb;
+  transition: transform 0.3s;
+  display: inline-block;
+  font-weight: 700;
+}
+
+a:hover {
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+
+nav {
+  margin-right: 5%;
+  font-size: 30px;
+}
+
+li {
+  list-style: none;
+  display: inline;
+  padding: 15px;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff17;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+footer {
+  display: flex;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+  position: fixed; /* Changed from absolute to fixed */
+  bottom: 0;
+  width: 100%;
+  z-index: 9999; /* Ensure it stays on top */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15%;
+  margin-bottom: 800px; /* Adds space after the flex-container */
+}
+
+.flex-container > div {
+  width: 50vw;
+  margin: 30px;
+  margin-right: 110px;
+}
+
+p {
+  color: azure;
+  background: #00000041;
+  padding: 80px;
+  border-radius: 8px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  width: 80%; /* Increase the width to take up more space */
+  max-width: 1000px; /* Optional: Set a max width to prevent it from becoming too wide on larger screens */
+  /* Add padding to the left and right for spacing */
+}
+
+.flex-container img {
+  max-width: 100%;
+  height: auto;
+  /* Maintain aspect ratio */
+  flex: 1 1 auto;
+  /* Allow images to grow and shrink */
+  object-fit: cover;
+  padding-left: 80px;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 600px) {
+  .flex-container img {
+    flex: 1 1 100%;
+    /* Full width on small screens */
+  }
+}
+.container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.song-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.song {
+  flex: 1;
+  text-align: center;
+  background: #8f8f8f;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 150px;
+}
+
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.image-column img {
+  width: 100%;
+  border-radius: 5px;
+  background: #000000;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Covers full screen height */
+  object-fit: cover; /* Ensures the video fills the area */
+  z-index: -1; /* Keeps it behind everything */
+}

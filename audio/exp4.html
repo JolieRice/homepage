@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Reactive Shape</title>
+    <link rel="stylesheet" href="exp4.css" />
+    <script src="exp4.js" defer></script>
+  </head>
+  <header>
+    <h1 class="logo"><a href="#">Sound in Motion</a></h1>
+    <nav>
+      <ul>
+        <li class="nav1"><a href="exp2.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <h1 id="songTitle">Song Title</h1>
+    <h2 id="songArtist">Artist</h2>
+
+    <!-- Shape animation container -->
+    <div class="shape-container"></div>
+
+    <!-- Button container for controls -->
+    <div class="button-container">
+      <button id="prev">⏮ Previous</button>
+      <button id="next">⏭ Next</button>
+      <button><input type="file" id="audioFile" accept="audio/*" /></button>
+    </div>
+
+    <!-- Stationary Audio Player -->
+    <div class="audio-container">
+      <audio id="audio" controls></audio>
+    </div>
+
+    <div class="print-artwork">
+      <input type="button" value="Print this page" onClick="window.print()" />
+    </div>
+  </body>
+</html>
