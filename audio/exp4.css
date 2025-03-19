@@ -16,6 +16,9 @@ body {
 .logo {
   margin-left: 5%;
   font-size: 35px;
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
@@ -184,12 +187,14 @@ audio {
   background-color: #414141;
 }
 
-/*
-  .shape-container {
-    Style your shape container as needed 
-  }
-  
-  .button-container {
-    Style for your control buttons (prev, next, etc.)
-  }
-  */
+.syncopate-regular {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.syncopate-bold {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
