@@ -103,7 +103,7 @@ header {
 /* Button container */
 .button-container {
   position: fixed;
-  bottom: 6%;
+  bottom: 10%;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
   padding: 10px 0;
