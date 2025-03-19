@@ -11,6 +11,9 @@ body {
 .logo {
   margin-left: 5%;
   font-size: 35px;
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
@@ -172,4 +175,16 @@ p {
   height: 100vh; /* Covers full screen height */
   object-fit: cover; /* Ensures the video fills the area */
   z-index: -1; /* Keeps it behind everything */
+}
+
+.syncopate-regular {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.syncopate-bold {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
