@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1,
+                   maximum-scale=1, minimum-scale=1, 
+                   width=device-width"
+    />
+    <!-- CSS file linked -->
+    <link rel="stylesheet" href="exp2.css" />
+    <title>Sound Machine</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo"><a href="#">Sound in Motion</a></h1>
+      <nav>
+        <ul>
+          <li class="nav1"><a href="exp4.html">Visualizer</a></li>
+        </ul>
+      </nav>
+    </header>
+    <video class="video-background" autoplay loop muted playsinline>
+      <source src="songs/vid.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="flex-container">
+      <div>
+        <p>
+          This project explores the connection between sound and visuals through
+          an audio visualizer, turning music into patterns and imagery. By
+          capturing three songs at different timestamps, I've created a
+          side-by-side comparison of how each track translates visually over
+          time. The result is a collection that showcases the unique rhythm and
+          energy of each moment in the music.
+        </p>
+      </div>
+    </div>
+
+    
+      <!-- Song Row -->
+      <div class="song-row">
+        <div class="song">Dream: 30 second intervals</div>
+        <div class="song">Flow: 30 second intervals</div>
+        <div class="song">Lazy: 15 second intervals</div>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="image-grid">
+        <div class="image-column">
+          <img src="songs/dream.30.png" alt="Image 1" />
+          <img src="songs/dream.100.png" alt="Image 4" />
+          <img src="songs/dream.130.png" alt="Image 7" />
+          <img src="songs/dream.200.png" alt="Image 1" />
+          <img src="songs/dream.230.png" alt="Image 4" />
+          <img src="songs/dream.300.png" alt="Image 7" />
+        </div>
+        <div class="image-column">
+          <img src="songs/flow.30.png" alt="Image 1" />
+          <img src="songs/flow.100.png" alt="Image 4" />
+          <img src="songs/flow.130.png" alt="Image 7" />
+          <img src="songs/flow.200.png" alt="Image 1" />
+        </div>
+        <div class="image-column">
+          <img src="songs/lazy.15.png" alt="Image 3" />
+          <img src="songs/lazy.30.png" alt="Image 6" />
+          <img src="songs/lazy.45.png" alt="Image 9" />
+          <img src="songs/lazy.100.png" alt="Image 6" />
+          <img src="songs/lazy.115.png" alt="Image 9" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
