@@ -1,31 +1,57 @@
-function addChair() {
-  const chair = document.createElement("div");
-  chair.classList.add("chair");
-  chair.style.left = Math.random() * window.innerWidth * 0.8 + "px";
-  chair.style.top = Math.random() * window.innerHeight * 0.8 + "px";
-  document.getElementById("space").appendChild(chair);
-  makeDraggable(chair);
-}
+const hair = ["longhair.png", "bob.png", "blondehair.png"];
+const tops = [
+  "rainshirt.png",
+  "blackshirt.png",
+  "purpletop.png",
+  "rosetop.png",
+];
+const bottoms = ["jeanskirt.png", "tanpants.png", "plaidskirt.png"];
+const shoes = ["blackshoe.png", "boots.png", "whiteshoe.png"];
 
-function makeDraggable(element) {
-  let offsetX, offsetY;
-
-  element.addEventListener("mousedown", (e) => {
-    offsetX = e.clientX - element.offsetLeft;
-    offsetY = e.clientY - element.offsetTop;
-    document.addEventListener("mousemove", move);
-    document.addEventListener("mouseup", () => {
-      document.removeEventListener("mousemove", move);
-    });
-  });
-
-  function move(e) {
-    element.style.left = e.clientX - offsetX + "px";
-    element.style.top = e.clientY - offsetY + "px";
+function randomize(category) {
+  let items, previewId;
+  switch (category) {
+    case "hair":
+      items = hair;
+      previewId = "hair";
+      break;
+    case "top":
+      items = tops;
+      previewId = "top";
+      break;
+    case "bottom":
+      items = bottoms;
+      previewId = "bottom";
+      break;
+    case "shoes":
+      items = shoes;
+      previewId = "shoes";
+      break;
   }
+  const randomItem = items[Math.floor(Math.random() * items.length)];
+  document.getElementById(previewId).src = randomItem;
 }
 
-function toggleBackground() {
-  document.body.style.backgroundColor =
-    document.body.style.backgroundColor === "black" ? "#f0f0f0" : "black";
+const cursor = document.getElementById("custom-cursor");
+let mouseX = 0,
+  mouseY = 0;
+let cursorX = 0,
+  cursorY = 0;
+const speed = 0.3;
+
+document.addEventListener("mousemove", (event) => {
+  mouseX = event.pageX;
+  mouseY = event.pageY;
+});
+
+function updateCursor() {
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+
+  cursor.style.left = `${cursorX}px`;
+  cursor.style.top = `${cursorY}px`;
+
+  requestAnimationFrame(updateCursor);
 }
+
+updateCursor();

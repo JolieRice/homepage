@@ -1,27 +1,101 @@
 body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url("galaxy.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
-  overflow: hidden;
-  background-color: #f0f0f0;
+  cursor: none;
 }
-.container {
-  width: 100vw;
-  height: 100vh;
+h1 {
+  font-family: "Emilys Candy", serif;
+  font-size: 60px;
+  color: #d61d7d;
+}
+.game-container {
+  max-width: 800px;
+  margin: auto;
+  background-image: url("background.webp");
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d2659d(0, 0, 0, 0.1);
   position: relative;
 }
-.chair {
-  width: 50px;
-  height: 50px;
-  background-color: green;
+.preview {
+  position: relative;
+}
+.alien-container {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+#alien-body {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.clothing {
   position: absolute;
-  cursor: grab;
-  border-radius: 5px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  height: auto;
+}
+.hair {
+  top: 5%;
+  width: 200px;
+}
+.top {
+  top: 29%;
+}
+.bottom {
+  top: 47%;
+}
+.shoes {
+  top: 70%;
+  width: 250px;
+  transform: translateX(-55%);
 }
 .controls {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: white;
+  position: fixed;
+  top: 60px;
+  left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f3bdd9;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.controls button {
+  width: 200px;
+  padding: 20px;
+  background: #d61d7d;
+  color: white;
+  border: none;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Emilys Candy", serif;
+  font-size: 20px;
+}
+
+.controls button:hover {
+  background: #ec93c1;
+  cursor: none;
+}
+.emilys-candy-regular {
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#custom-cursor {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }

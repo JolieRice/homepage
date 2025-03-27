@@ -3,15 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control</title>
+    <title>Alien Dress-Up Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="con.css" />
-    <script src="con.js" defer></script>
+    <script defer src="con.js"></script>
   </head>
   <body>
-    <div class="controls">
-      <button onclick="addChair()">Add Chair</button>
-      <button onclick="toggleBackground()">Toggle Background</button>
+    <div class="game-container">
+      <h1>Out-of-This-World Baddie Dress-Up</h1>
+      <div class="preview">
+        <div id="alien-container" class="alien-container">
+          <img id="hair" src="towel.png" alt="hair" class="clothing hair" />
+
+          <img id="shoes" src=".png" class="clothing shoes" />
+
+          <img id="alien-body" src="alien.png" alt="Alien Body" />
+          <img id="bottom" src="sleepshorts.png" class="clothing bottom" />
+          <img id="top" src="robe.png" alt="Top" class="clothing top" />
+        </div>
+      </div>
+      <div class="controls">
+        <button onclick="randomize('hair')">Hair</button>
+
+        <button onclick="randomize('top')">Tops</button>
+        <button onclick="randomize('bottom')">Bottoms</button>
+        <button onclick="randomize('shoes')">Shoes</button>
+      </div>
     </div>
-    <div class="container" id="space"></div>
+    <img id="custom-cursor" src="pinkstar.png" alt="Custom Cursor" />
+    <audio id="bg-music" autoplay loop>
+      <source src="Style Savvy Apartment Theme.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
   </body>
 </html>
