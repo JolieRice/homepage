@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.chair {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  position: absolute;
+  cursor: grab;
+  border-radius: 5px;
+}
+.controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

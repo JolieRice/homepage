@@ -13,9 +13,9 @@ const nextBtn = document.getElementById("next");
 const shapeContainer = document.querySelector(".shape-container");
 const audioFileInput = document.getElementById("audioFile"); // File input for user uploads
 const downloadBtn = document.getElementById("downloadBtn");
-let generatedShapes = []; // Store the shape data for final artwork
+let generatedShapes = []; // Store shape for final artwork
 
-// Load a song (for playlist functionality)
+// Load a song for playlist
 function loadSong(index) {
   let song = playlist[index];
   audio.src = song.src;
@@ -36,7 +36,7 @@ nextBtn.addEventListener("click", () => {
   loadSong(currentSongIndex);
 });
 
-// Handle file upload
+// File upload
 audioFileInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
@@ -49,7 +49,7 @@ audioFileInput.addEventListener("change", (event) => {
   }
 });
 
-// Start with the first song in the playlist (or the first uploaded file)
+// Start with the first song in the playlist, or the first uploaded file
 loadSong(currentSongIndex);
 
 // Shape visualization
@@ -70,14 +70,14 @@ function startVisualization(audioElement) {
     let avgFreq =
       frequencyData.reduce((a, b) => a + b, 0) / frequencyData.length;
 
-    // Dynamically adjust multiple color values based on frequency data
+    // Color based on frequency data
     let red = Math.min(255, avgFreq * 2.5);
     let green = Math.min(255, 255 - avgFreq * 1.5);
     let blue = Math.min(255, 200 - avgFreq * 0.5);
     let yellow = Math.min(255, avgFreq * 1.5); // Add yellow
     let purple = Math.min(255, 255 - avgFreq * 1.2); // Add purple
 
-    // Create a gradient with more colors
+    // Gradient with more colors
     let gradient = `linear-gradient(45deg, 
         rgb(${red}, ${green}, ${blue}),
         rgb(${yellow}, ${blue / 2}, ${green / 2}),
