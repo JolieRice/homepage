@@ -11,11 +11,11 @@ const songArtist = document.getElementById("songArtist");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const shapeContainer = document.querySelector(".shape-container");
-const audioFileInput = document.getElementById("audioFile"); // File input for user uploads
+const audioFileInput = document.getElementById("audioFile"); // File input for uploads
 const downloadBtn = document.getElementById("downloadBtn");
-let generatedShapes = []; // Store the shape data for final artwork
+let generatedShapes = []; //final artwork
 
-// Load a song (for playlist functionality)
+// Load a song
 function loadSong(index) {
   let song = playlist[index];
   audio.src = song.src;
@@ -25,7 +25,6 @@ function loadSong(index) {
   startVisualization(audio);
 }
 
-// Event Listeners for Buttons
 prevBtn.addEventListener("click", () => {
   currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
   loadSong(currentSongIndex);
@@ -36,7 +35,7 @@ nextBtn.addEventListener("click", () => {
   loadSong(currentSongIndex);
 });
 
-// Handle file upload
+// file upload
 audioFileInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
@@ -49,10 +48,10 @@ audioFileInput.addEventListener("change", (event) => {
   }
 });
 
-// Start with the first song in the playlist (or the first uploaded file)
+// Start with first song
 loadSong(currentSongIndex);
 
-// Shape visualization
+// Shape visual
 function startVisualization(audioElement) {
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
   const source = audioContext.createMediaElementSource(audioElement);
@@ -70,12 +69,12 @@ function startVisualization(audioElement) {
     let avgFreq =
       frequencyData.reduce((a, b) => a + b, 0) / frequencyData.length;
 
-    // Dynamically adjust multiple color values based on frequency data
+    //color based on frequency data
     let red = Math.min(255, avgFreq * 2.5);
     let green = Math.min(255, 255 - avgFreq * 1.5);
     let blue = Math.min(255, 200 - avgFreq * 0.5);
-    let yellow = Math.min(255, avgFreq * 1.5); // Add yellow
-    let purple = Math.min(255, 255 - avgFreq * 1.2); // Add purple
+    let yellow = Math.min(255, avgFreq * 1.5);
+    let purple = Math.min(255, 255 - avgFreq * 1.2);
 
     // Create a gradient with more colors
     let gradient = `linear-gradient(45deg, 
@@ -90,13 +89,13 @@ function startVisualization(audioElement) {
     newShape.style.width = `${newSize}px`;
     newShape.style.height = `${newSize}px`;
 
-    // Change shape based on frequency
+    // change shape based on frequency
     if (avgFreq > 150) {
-      newShape.style.borderRadius = "0%"; // Square
+      newShape.style.borderRadius = "0%"; // square
     } else if (avgFreq > 100) {
-      newShape.style.borderRadius = "20%"; // Rounded square
+      newShape.style.borderRadius = "20%"; // middle
     } else {
-      newShape.style.borderRadius = "50%"; // Circle
+      newShape.style.borderRadius = "50%"; // circle
     }
 
     newShape.style.background = gradient;
@@ -112,7 +111,7 @@ function startVisualization(audioElement) {
       borderRadius: newShape.style.borderRadius,
       background: gradient,
       rotation: rotationDegree,
-      position: { x: window.innerWidth / 2, y: window.innerHeight / 2 }, // Center position
+      position: { x: window.innerWidth / 2, y: window.innerHeight / 2 },
     });
 
     setTimeout(() => {
@@ -126,7 +125,7 @@ function startVisualization(audioElement) {
 
   updateShape();
 
-  // When the song ends, show the download button
+  // When the song ends show download button
   audioElement.onended = () => {
     document.querySelector(".final-artwork").style.display = "block";
   };
@@ -137,18 +136,18 @@ downloadBtn.addEventListener("click", () => {
   const artworkCanvas = document.createElement("canvas");
   const ctx = artworkCanvas.getContext("2d");
 
-  // Set canvas size to match the browser window
+  // canvas size match browser window
   artworkCanvas.width = window.innerWidth;
   artworkCanvas.height = window.innerHeight;
 
   // Clear the canvas before drawing
   ctx.clearRect(0, 0, artworkCanvas.width, artworkCanvas.height);
 
-  // Draw the shapes on the canvas based on stored data
+  // Draw the shapes based on stored data
   generatedShapes.forEach((shape) => {
     const { size, borderRadius, background, rotation, position } = shape;
 
-    // Create a gradient based on the shape's background
+    // Create a gradient based on shape background
     const gradient = ctx.createLinearGradient(
       position.x - size / 2,
       position.y - size / 2,
@@ -165,13 +164,13 @@ downloadBtn.addEventListener("click", () => {
       gradient.addColorStop(0, `rgb(${r}, ${g}, ${b})`);
     }
 
-    // Apply rotation and draw the shape
+    // rotation and draw the shape
     ctx.save();
     ctx.translate(position.x, position.y);
     ctx.rotate((rotation * Math.PI) / 180); // Rotate in radians
     ctx.translate(-position.x, -position.y);
 
-    // Draw the shape based on its border radius
+    // Draw the shape
     ctx.fillStyle = gradient;
     ctx.beginPath();
     ctx.arc(position.x, position.y, size / 2, 0, 2 * Math.PI); // Draw a circle shape
@@ -179,7 +178,7 @@ downloadBtn.addEventListener("click", () => {
     ctx.restore();
   });
 
-  // Trigger the download
+  // download
   const link = document.createElement("a");
   link.href = artworkCanvas.toDataURL();
   link.download = "artwork.png";
