@@ -1,4 +1,3 @@
-/* Reset body and general styles */
 body {
   margin: 0;
   height: 100vh;
@@ -63,11 +62,11 @@ header {
   color: white;
   padding: 4px;
   position: fixed;
-  top: 0; /* Ensures it stays at the top */
-  left: 0; /* Aligns it to the left */
-  right: 0; /* Ensures it spans the full width */
-  width: 100%; /* Full width of the screen */
-  z-index: 1000; /* Makes sure it's on top of other elements */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 #songTitle,
@@ -80,7 +79,6 @@ header {
   top: 15%;
 }
 
-/* Shape container */
 .shape-container {
   position: absolute;
   top: 0;
@@ -91,7 +89,7 @@ header {
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  z-index: 5; /* Ensure the shapes appear above other content */
+  z-index: 5;
 }
 
 .shape {
@@ -103,7 +101,6 @@ header {
   pointer-events: none;
 }
 
-/* Button container */
 .button-container {
   position: fixed;
   bottom: 10%;
@@ -129,7 +126,6 @@ button:hover {
   background: #666;
 }
 
-/* Audio container */
 .audio-container {
   position: fixed;
   bottom: 2%;
@@ -145,7 +141,6 @@ audio {
   max-width: 500px;
 }
 
-/* Final Artwork */
 .final-artwork {
   display: none;
   margin-top: 30px;
@@ -164,10 +159,9 @@ audio {
   background: #666;
 }
 
-/* Fixed print button */
 .print-artwork {
   position: fixed;
-  bottom: 12%; /* Slightly above the download button */
+  bottom: 12%;
   z-index: 1000;
 }
 
