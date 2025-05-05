@@ -99,7 +99,6 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 1;
   width: 80%;
   max-width: 900px;
   line-height: 1.6;
