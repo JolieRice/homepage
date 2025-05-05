@@ -55,7 +55,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff17;
+  background-color: #33333353;
   color: white;
   padding: 15px;
   position: fixed;
@@ -95,14 +95,14 @@ p {
   border-radius: 8px;
   font-size: 26px;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
   width: 80%;
   max-width: 900px;
-  line-height: 1.6; /* or try 24px if using pixel units */
+  line-height: 1.6;
 }
 
 .flex-container img {
@@ -124,6 +124,7 @@ p {
 }
 
 .song-row {
+  padding-top: 600px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
