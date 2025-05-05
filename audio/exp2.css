@@ -89,11 +89,11 @@ footer {
 }
 
 p {
-  color: azure;
-  background: #00000041;
+  color: white;
+  background: #000000a4;
   padding: 80px;
   border-radius: 8px;
-  font-size: 25px;
+  font-size: 26px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -101,7 +101,8 @@ p {
   text-align: center;
   z-index: 1;
   width: 80%;
-  max-width: 1000px;
+  max-width: 900px;
+  line-height: 1.6; /* or try 24px if using pixel units */
 }
 
 .flex-container img {
@@ -134,7 +135,7 @@ p {
   flex: 1;
   text-align: center;
   background: #191919b9;
-  color: azure;
+  color: white;
 
   padding: 15px;
   border-radius: 8px;
