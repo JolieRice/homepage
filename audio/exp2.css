@@ -69,17 +69,17 @@ footer {
   color: white;
   text-align: center;
   padding: 0.7rem;
-  position: fixed; /* Changed from absolute to fixed */
+  position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 9999; /* Ensure it stays on top */
+  z-index: 9999;
 }
 
 .flex-container {
   display: flex;
   flex-direction: row;
   margin-top: 15%;
-  margin-bottom: 800px; /* Adds space after the flex-container */
+  margin-bottom: 800px;
 }
 
 .flex-container > div {
@@ -100,26 +100,21 @@ p {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
-  width: 80%; /* Increase the width to take up more space */
-  max-width: 1000px; /* Optional: Set a max width to prevent it from becoming too wide on larger screens */
-  /* Add padding to the left and right for spacing */
+  width: 80%;
+  max-width: 1000px;
 }
 
 .flex-container img {
   max-width: 100%;
   height: auto;
-  /* Maintain aspect ratio */
   flex: 1 1 auto;
-  /* Allow images to grow and shrink */
   object-fit: cover;
   padding-left: 80px;
 }
 
-/* Optional: Add media queries for responsiveness */
 @media (max-width: 600px) {
   .flex-container img {
     flex: 1 1 100%;
-    /* Full width on small screens */
   }
 }
 .container {
@@ -138,7 +133,9 @@ p {
 .song {
   flex: 1;
   text-align: center;
-  background: #8f8f8f;
+  background: #191919b9;
+  color: azure;
+
   padding: 15px;
   border-radius: 8px;
   min-width: 150px;
@@ -166,15 +163,15 @@ p {
   padding: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-/* Video Background */
+
 .video-background {
   position: absolute;
   top: 20%;
   left: 0;
   width: 100%;
-  height: 100vh; /* Covers full screen height */
-  object-fit: cover; /* Ensures the video fills the area */
-  z-index: -1; /* Keeps it behind everything */
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .syncopate-regular {
@@ -187,4 +184,16 @@ p {
   font-family: "Syncopate", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+div.scroll-container {
+  background-color: #000000;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  width: 700px;
+  padding: 50px;
 }
